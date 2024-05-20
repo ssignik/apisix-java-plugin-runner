@@ -12,8 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PrePostDemoFilter implements PluginFilter{
+public class PrePostDemoFilter implements PluginFilter {
     private final Logger logger = LoggerFactory.getLogger(PrePostDemoFilter.class);
+
     @Override
     public String name() {
         return "PrePostDemoFilter";
@@ -28,7 +29,7 @@ public class PrePostDemoFilter implements PluginFilter{
         Gson gson = new Gson();
         Map<String, Object> bodyMap = new HashMap<>();
         bodyMap = gson.fromJson(body, bodyMap.getClass());
-        bodyMap.put("plugin","PrePostDemoFilter");
+        bodyMap.put("plugin", "PrePostDemoFilter");
         request.setBody(gson.toJson(bodyMap));
         chain.filter(request, response);
     }
