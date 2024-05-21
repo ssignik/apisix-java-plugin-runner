@@ -7,11 +7,13 @@ import org.apache.apisix.plugin.runner.PostRequest;
 import org.apache.apisix.plugin.runner.PostResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class PrePostDemoFilter implements PluginFilter {
     private final Logger logger = LoggerFactory.getLogger(PrePostDemoFilter.class);
 
